@@ -7,6 +7,12 @@ console.log(arrayCheck('Pat rules'));
 console.log(arrayCheck([1, 2, 3, 4, 5]));
 
 // 2. Write a JavaScript function to get the first 'n' elements of an array.
+const arrayOne = [1, 1, 2, 3, 4, 4, 5, 6, 7, 7];
+function firstOf(a, n) {
+  firstElements = arrayOne.slice(0, n);
+  return firstElements;
+}
+console.log(firstOf(arrayOne, 4));
 
 // 3. Write a simple JavaScript program to join all elements of the following array into a string.
 function arrayConvert() {
@@ -36,8 +42,44 @@ console.log(arraySorted(78965));
 // ```
 // Sample array: const arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 // ```
-
+//Solution found on medium.com
+var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+(function(array) {
+  let result, // This is the value we will return
+    best = -1, // Initialize the comparison for greedy
+    lookup = {}; // Hashmap for essentially constant lookup
+  // Loop to go through array and count elements
+  for (let i = 0; i < array.length; i++) {
+    // could replace block with `x[a[i]] = (x[a[i]] + 1)|0`
+    //but far less readable
+    if (lookup[array[i]] == undefined) {
+      lookup[array[i]] = 0;
+    }
+    lookup[array[i]]++; // Increment count
+    if (lookup[array[i]] > best) {
+      // Greedy for best element
+      best = lookup[array[i]];
+      result = array[i];
+    }
+  }
+  //will return most frequent item in array cats
+  return result;
+})(arr1);
 // 7. Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input `The Quick Brown Fox` the output should be `tHE qUICK bROWN fOX`.
+const ogString = 'The QuickBrown Fox.';
+let swapCase = function(letters) {
+  let newLetters = '';
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] === letters[i].toLowerCase()) {
+      newLetters += letters[i].toUpperCase();
+    } else {
+      newLetters += letters[i].toLowerCase();
+    }
+  }
+  console.log(newLetters);
+  return newLetters;
+};
+let swappedText = swapCase(ogString);
 
 // 8. Write a JavaScript program which prints the elements of the following array. Note : Use nested for loops.
 // ```
