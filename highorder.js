@@ -21,6 +21,7 @@ function arrayConvert() {
   return converted;
 }
 console.log(arrayConvert());
+
 // 4. Write a JavaScript program which accept a number as input and insert dashes (-) between each number.
 dashInsert = function(num) {
   const newString = num.toString();
@@ -38,6 +39,7 @@ arraySorted = function(input) {
   return sorted;
 };
 console.log(arraySorted(78965));
+
 // 6. Write a JavaScript program to find the most frequent item of an array.
 // ```
 // Sample array: const arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
@@ -65,6 +67,7 @@ var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
   //will return most frequent item in array cats
   return result;
 })(arr1);
+
 // 7. Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input `The Quick Brown Fox` the output should be `tHE qUICK bROWN fOX`.
 const ogString = 'The QuickBrown Fox.';
 let swapCase = function(letters) {
@@ -83,10 +86,32 @@ let swappedText = swapCase(ogString);
 
 // 8. Write a JavaScript program which prints the elements of the following array. Note : Use nested for loops.
 // ```
-// const arr = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+const arr = [
+  [1, 2, 1, 24],
+  [8, 11, 9, 4],
+  [7, 0, 7, 27],
+  [7, 4, 28, 14],
+  [3, 10, 26, 7]
+];
 // ```
+//Using forEach()
+arr.forEach(dataSet => console.log(dataSet));
 
 // 9. Write a JavaScript program to remove duplicate items from an array (ignore case sensitivity).
+
+let breeds = [
+  'Doberman',
+  'Boxer',
+  'Labrador',
+  'Poodle',
+  'Doberman',
+  'Boxer',
+  'Poodle'
+];
+
+const deduped = new Set(breeds);
+const newArray = [...deduped];
+console.log(deduped);
 
 // 10.  There are two arrays with individual values, write a JavaScript program to compute the sum of each individual index value from the given arrays.
 // ```
